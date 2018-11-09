@@ -1,0 +1,32 @@
+{
+  "name": "chrisnuxtjssite",
+  "version": "1.0.0",
+  "description": "Chris Nuxt js site",
+  "author": "christlc",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/bulma": "^1.2.0",
+    "@nuxtjs/markdownit": "^1.2.2",
+    "bulma": "^0.7.2",
+    "cross-env": "^5.2.0",
+    "font-awesome": "^4.7.0",
+    "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
