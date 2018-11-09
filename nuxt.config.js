@@ -1,4 +1,50 @@
 const pkg = require('./package')
+const { join } = require('path')
+const dir = require('node-dir')
+const routesArray = []
+const fs = require('fs')
+const _ = require('lodash')
+
+var files = fs.readdirSync('./static/dynamicMarkdownFiles');
+function createRoutesArray() {
+  files.forEach(function (file) {
+      var name = file.substr(0, file.lastIndexOf('.'));
+      var route = '/dynamic/' + name
+      routesArray.push(route)
+  });
+}
+
+function returnRoutes() {
+  dir.readFiles('./static/dynamicMarkdownFiles', {
+        match: /.md$/,
+        shortName: true,
+        exclude: /^\./
+        }, function(err, content, next) {
+            if (err) throw err;
+            // console.log('content:', content);
+            next();
+        },
+        function(err, files){
+            if (err) throw err;
+            // fileNamesArray = [];
+            files.forEach(function (file) {
+                var name = file.substr(0, file.lastIndexOf('.'));
+                var path = '/dynamic/' + name
+                return path
+            });
+        });
+}
+// const fs = require('fs')
+// const axios = require('axios')
+// // const _ = require('lodash')
+
+//
+function getSlugs(post, index) {
+  let slug = post.substr(0, post.lastIndexOf('.'));
+  return `/dynamic/${slug}`
+}
+//
+//const postsArray = require('.//posts.json')
 
 module.exports = {
   mode: 'universal',
@@ -17,7 +63,24 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  generate: {
+  routes: function() {
 
+    return files.map(getSlugs)
+    // return _.map(routesArray, function(file) {
+    //   let slug = file.substr(0, file.lastIndexOf('.'));
+    //   return `/dynamic/${slug}`
+    // })
+
+  // return axios.get('~/static/posts.json')
+  // .then((res) => {
+  //   return _.map(res.data, function(post, key) {
+  //     return `/dynamic/${post.slug}`
+  //   })
+  //
+  // })
+  }
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -44,7 +107,7 @@ module.exports = {
   modules: [
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    '@nuxtjs/markdownit'
+    ['@nuxtjs/markdownit', {linkify: true}]
   ],
   markdownit: {
     injected: true,
