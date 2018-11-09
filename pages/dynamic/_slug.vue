@@ -5,10 +5,10 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            {{ $route.params.slug }}
+            {{ attributes.title }}            
           </h1>
           <h2 class="subtitle">
-            A dynamic markdown file
+            {{ attributes.date.toLocaleDateString() }}
           </h2>
         </div>
       </div>
@@ -25,11 +25,21 @@
 </template>
 
 <script>
+const fm = require('front-matter')
+var md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typographer: true
+})
+
 export default {
   async asyncData ({params}) {
     const fileContent = await import(`~/static/dynamicMarkdownFiles/${params.slug}.md`)
+    let res = fm(fileContent.default)
+    console.log(res)
     return {
-      content: fileContent.default
+      attributes: res.attributes,
+      content: md.render(res.body)
     }
   }
 }
