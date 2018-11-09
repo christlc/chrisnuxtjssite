@@ -1,14 +1,17 @@
 <template>
-
   <div :key="$route.params.slug">
     <section class="hero is-primary">
-      <div class="hero-body">
+      <div 
+        class="hero-body" 
+        style="padding-top:100px;">
         <div class="container">
           <h1 class="title">
             {{ attributes.title }}            
           </h1>
-          <h2 class="subtitle">
-            {{ attributes.date.toLocaleDateString() }}
+          <h2 
+            v-if="attributes.date"
+            class="subtitle">
+            {{ new Date(attributes.date).toLocaleDateString() }}
           </h2>
         </div>
       </div>
@@ -32,11 +35,11 @@ var md = require('markdown-it')({
   typographer: true
 })
 
+
 export default {
   async asyncData ({params}) {
     const fileContent = await import(`~/static/dynamicMarkdownFiles/${params.slug}.md`)
     let res = fm(fileContent.default)
-    console.log(res)
     return {
       attributes: res.attributes,
       content: md.render(res.body)

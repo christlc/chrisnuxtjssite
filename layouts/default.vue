@@ -35,18 +35,28 @@
             <a 
               class="navbar-item" 
               href="/about">
+              <i 
+                class="fa fa-user " 
+                style="padding-right:10px;color:hsl(348, 100%, 61%);"/>
               About
             </a>
             <a 
               class="navbar-item" 
-              href="/path">
-              Path
+              href="/posts">
+              <i 
+                class="fa fa-newspaper-o" 
+                style="padding-right:10px;color:hsl(48, 100%, 67%);"/>
+              Posts
             </a>
-            <a 
-              class="navbar-item" 
-              href="/blog">
-              Blog
-            </a>
+
+            <span class="navbar-item">
+              <a class="button is-rounded is-success">
+                <span style="padding-right:10px;">
+                  <i class="fa fa-envelope"/> 
+                </span>
+                Contact
+              </a>
+            </span>
           </div>
         </div>
       </nav>
@@ -78,13 +88,13 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
+/*
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
+}*/
 
 .button--green {
   display: inline-block;

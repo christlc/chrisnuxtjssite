@@ -1,17 +1,44 @@
 <template>
   <section class="container">
-    <div>
-      Hello World
+    <div> 
+      My repository of notes
+      <div 
+        v-for="item in postList" 
+        :key="item.title">
+        {{ item.title }}
+        {{ item.tags }}
+        <nuxt-link :to="item.link">Go</nuxt-link>
+        {{ item.link }}
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+var context = require.context('~/static/dynamicMarkdownFiles/', true, /\.(md)$/);
+var files=context.keys();
+
+console.log(files);
+
+const fm = require('front-matter')
 
 export default {
   components: {
     Logo
+  },
+  async asyncData ({params}) {
+      let result = []
+      for (let i in files) {
+        let x = files[i]
+        let a = fm(context(x)).attributes
+        a.link = '/dynamic/'+ x.substr(0, x.lastIndexOf('.')).substr(2,x.length)
+        result.push(a)
+      }
+
+      return {
+          postList: result
+      }
   }
 }
 </script>
