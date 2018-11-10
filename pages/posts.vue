@@ -1,7 +1,41 @@
 <template>
   <section class="container">
+    <section class="hero is-primary">
+      <div 
+        class="hero-body" 
+        style="padding-top:50px;">
+        <div class="container">
+          <h1 class="title">
+            My Set of Notes
+          </h1>
+        </div>
+      </div>
+    </section>
+    <div class="card">
+      <div class="card-content">
+        <p class="title">
+          “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+        </p>
+        <p class="subtitle">
+          Jeff Atwood
+        </p>
+      </div>
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          <span>
+            View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+          </span>
+        </p>
+        <p class="card-footer-item">
+          <span>
+            Share on <a href="#">Facebook</a>
+          </span>
+        </p>
+      </footer>
+    </div>
     <div> 
       My repository of notes
+
       <div 
         v-for="item in postList" 
         :key="item.title">
@@ -32,7 +66,7 @@ export default {
       for (let i in files) {
         let x = files[i]
         let a = fm(context(x)).attributes
-        a.link = '/dynamic/'+ x.substr(0, x.lastIndexOf('.')).substr(2,x.length)
+        a.link = '/post/'+ x.substr(0, x.lastIndexOf('.')).substr(2,x.length)
         result.push(a)
       }
 
@@ -45,33 +79,4 @@ export default {
 
 <style>
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

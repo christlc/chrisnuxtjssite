@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div class="container"> 
     <div>
       <nav class="navbar is-fixed-top">
         <div class="navbar-brand">
@@ -32,22 +32,22 @@
           :class="{ 'is-active': showNav }" 
           class="navbar-menu">
           <div class="navbar-end">
-            <a 
+            <nuxt-link
               class="navbar-item" 
-              href="/about">
+              to="/about">
               <i 
                 class="fa fa-user " 
                 style="padding-right:10px;color:hsl(348, 100%, 61%);"/>
               About
-            </a>
-            <a 
+            </nuxt-link>
+            <nuxt-link
               class="navbar-item" 
-              href="/posts">
+              to="/posts">
               <i 
                 class="fa fa-newspaper-o" 
                 style="padding-right:10px;color:hsl(48, 100%, 67%);"/>
               Posts
-            </a>
+            </nuxt-link>
 
             <span class="navbar-item">
               <a class="button is-rounded is-success">
@@ -124,4 +124,5 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
 </style>

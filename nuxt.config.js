@@ -9,7 +9,7 @@ var files = fs.readdirSync('./static/dynamicMarkdownFiles');
 function createRoutesArray() {
   files.forEach(function (file) {
       var name = file.substr(0, file.lastIndexOf('.'));
-      var route = '/dynamic/' + name
+      var route = '/post/' + name
       routesArray.push(route)
   });
 }
@@ -29,7 +29,7 @@ function returnRoutes() {
             // fileNamesArray = [];
             files.forEach(function (file) {
                 var name = file.substr(0, file.lastIndexOf('.'));
-                var path = '/dynamic/' + name
+                var path = '/post/' + name
                 return path
             });
         });
@@ -41,7 +41,7 @@ function returnRoutes() {
 //
 function getSlugs(post, index) {
   let slug = post.substr(0, post.lastIndexOf('.'));
-  return `/dynamic/${slug}`
+  return `/post/${slug}`
 }
 //
 //const postsArray = require('.//posts.json')
@@ -91,8 +91,8 @@ module.exports = {
   */
   css: [
    { src: 'node_modules/font-awesome/css/font-awesome.css', lang: 'css' },
-   { src: 'node_modules/highlight.js/styles/hopscotch.css', lang: 'css' }
-
+   { src: 'node_modules/highlight.js/styles/hopscotch.css', lang: 'css' },
+   { src: 'assets/style.css', lang: 'css'}
   ],
 
   /*
