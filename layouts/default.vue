@@ -1,17 +1,16 @@
 <template>
-  <div class="container"> 
+  <div> 
     <div>
       <nav class="navbar is-fixed-top">
         <div class="navbar-brand">
           <a 
             class="navbar-item" 
             href="/">
-            <span class="icon">
-              <i class="fa fa-info-circle"/>
+            <img src="favicon-256.png">
+            
+            <span class="logo">
+              Chris Choy
             </span>
-            <img 
-              src="http://bulma.io/images/bulma-logo.png" 
-              alt="Logo">
           </a>
           <!--
     Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
@@ -64,6 +63,21 @@
     <div>
       <nuxt/>
     </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p class="footer-link">
+          <a href="https://hk.linkedin.com/in/christlc">
+            <i class="fa fa-linkedin" />
+          </a>
+          
+          <a href="https://github.com/christlc">
+            <i class="fa fa-github" />
+          </a>
+          <br >
+          Created by <strong>Chris Choy</strong>.
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -77,6 +91,7 @@ export default {
 }
 </script>
 <style>
+ @import url('https://fonts.googleapis.com/css?family=Bungee');
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -87,6 +102,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  padding-top: 3.25rem; /* navbar */
 }
 /*
 *,
@@ -95,7 +111,10 @@ html {
   box-sizing: border-box;
   margin: 0;
 }*/
-
+.logo {
+  font-family: 'Bungee', cursive;
+  padding-left: 0.5em;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -123,6 +142,11 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.footer-link a{
+  font-size: 2em;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
 }
 
 </style>

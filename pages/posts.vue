@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section>
     <section class="hero is-primary">
       <div 
         class="hero-body" 
@@ -11,40 +11,35 @@
         </div>
       </div>
     </section>
-    <div class="card">
-      <div class="card-content">
-        <p class="title">
-          “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
-        </p>
-        <p class="subtitle">
-          Jeff Atwood
-        </p>
+    <section class="container">
+    
+      <div> 
+        <div 
+          v-for="item in postList" 
+          :key="item.title">
+          
+          <div class="card-content">
+            <nuxt-link 
+              :to="item.link">
+              
+              <p class="title title-link">
+                {{ item.title }}
+            </p></nuxt-link>
+            <p class="subtitle">
+              {{ new Date(item.date).toLocaleDateString() }}
+            </p>
+            <p class="subtitle">
+              <span 
+                v-for="(tag,i) in item.tags" 
+                :key="i" 
+                class="tag is-info mytag">
+                {{ tag }}
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
-      <footer class="card-footer">
-        <p class="card-footer-item">
-          <span>
-            View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-          </span>
-        </p>
-        <p class="card-footer-item">
-          <span>
-            Share on <a href="#">Facebook</a>
-          </span>
-        </p>
-      </footer>
-    </div>
-    <div> 
-      My repository of notes
-
-      <div 
-        v-for="item in postList" 
-        :key="item.title">
-        {{ item.title }}
-        {{ item.tags }}
-        <nuxt-link :to="item.link">Go</nuxt-link>
-        {{ item.link }}
-      </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -63,13 +58,13 @@ export default {
   },
   async asyncData ({params}) {
       let result = []
-      for (let i in files) {
+      for (let i in files.reverse()) {
         let x = files[i]
         let a = fm(context(x)).attributes
         a.link = '/post/'+ x.substr(0, x.lastIndexOf('.')).substr(2,x.length)
         result.push(a)
       }
-
+      
       return {
           postList: result
       }
@@ -77,6 +72,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.mytag {
+  margin-right: 5px;
+}
+.title-link {
+    cursor: pointer;
+}
+.title-link:hover{
+    color: #3273dc;
+}
 </style>
