@@ -3,7 +3,7 @@
     <div>
       <nav class="navbar is-fixed-top">
         <div class="navbar-brand">
-          <a 
+          <nuxt-link
             class="navbar-item" 
             href="/">
             <img src="favicon-256.png">
@@ -11,7 +11,7 @@
             <span class="logo">
               Chris Choy
             </span>
-          </a>
+          </nuxt-link>
           <!--
     Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
     -->
