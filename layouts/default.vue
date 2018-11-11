@@ -119,7 +119,7 @@ html {
   margin: 0;
 }*/
 .logo {
-  font-family: 'Bungee', cursive;
+  font-family: 'Bungee';
   padding-left: 0.5em;
 }
 .button--green {

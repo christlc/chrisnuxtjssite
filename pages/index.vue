@@ -49,10 +49,7 @@ export default {
 
 <style>
 .vue-typer .typed{
-  color: white;
-}
-.mycenter {
-
+  color: white !important;
 }
 
 </style>
