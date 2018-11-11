@@ -49,13 +49,14 @@
             </nuxt-link>
 
             <span class="navbar-item">
-              <a class="button is-rounded is-success">
+              <nuxt-link 
+                to="/contact" 
+                class="button is-rounded is-success">
                 <span style="padding-right:10px;">
                   <i class="fa fa-envelope"/> 
                 </span>
                 Contact
-              </a>
-            </span>
+            </nuxt-link></span>
           </div>
         </div>
       </nav>
@@ -63,7 +64,9 @@
     <div>
       <nuxt/>
     </div>
-    <footer class="footer">
+    <footer 
+      class="footer" 
+      style="margin-top:3em;">
       <div class="content has-text-centered">
         <p class="footer-link">
           <a href="https://hk.linkedin.com/in/christlc">
@@ -72,6 +75,10 @@
           
           <a href="https://github.com/christlc">
             <i class="fa fa-github" />
+          </a>
+
+          <a href="https://medium.com/@christlc">
+            <i class="fa fa-medium" />
           </a>
           <br >
           Created by <strong>Chris Choy</strong>.

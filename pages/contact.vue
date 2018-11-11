@@ -6,17 +6,14 @@
         style="padding-top:50px;">
         <div class="container">
           <h1 class="title">
-            About Me
+            Contact Me
           </h1>
         </div>
       </div>
     </section>
     <section class="section">
-
       <p class="container">
-        I am a Data Scientist based in Hong Kong.
-        My current project is building a solution to accelerate qualitative data analysis in UX research. 
-        I have previously worked in BASF and Clutertech building data-driven solutions in automation, pricing, customer analytics and forecasting. 
+        Please feel free to connect with me😊
       </p>
     </section>
     <section class="container">
@@ -28,10 +25,9 @@
         >
 
           <div class="column">
-            <i class="fa fa-line-chart" />
+            <i class="fa fa-envelope" />
             <div>
-              R and Python programmer <br>
-              Tableau and PowerBI Visualization <br>
+              Email chris "at" chsquare.com
             </div>
           </div>
         </transition>
@@ -41,13 +37,28 @@
           enter-active-class="delay-1s animated bounceInUp"
           leave-active-class="animated tada"
         >      
-
           <div class="column">
-            <i class="fa fa-graduation-cap"/>
-            <div>
-              DPhil in Statistics from Oxford <br>
-              Self-taught Full-stack Developer
-            </div>
+            <a href="https://hk.linkedin.com/in/christlc">
+              <i class="fa fa-linkedin"/>
+              <div>
+                LinkedIn @christlc
+              </div>
+            </a>
+          </div>
+        </transition>
+        <transition
+          appear 
+          enter-active-class="delay-1s animated bounceInDown"
+          leave-active-class="animated tada"
+        >    
+          <div class="column">
+            <a href="https://github.com/christlc">
+              <i class="fa fa-github" />
+              <div>
+              
+                Github @christlc
+              
+            </div></a>
           </div>
         </transition>
         <transition
@@ -56,26 +67,23 @@
           leave-active-class="animated tada"
         >    
           <div class="column">
-            <i class="fa fa-users" />
-            <div>
-              Organizer of Hong Kong R User Group <br>
-              Speaker of PyconHK conferences
-            </div>
+            <a href="https://medium.com/@christlc">
+              <i class="fa fa-medium" />
+              <div>
+              
+                Medium @christlc
+              
+              </div>
+            </a>
           </div>
         </transition>
       </div>
     </section>
     <section class="section">
       <p class="container">
-        Please feel free to view my profile on <a href="https://linkedin.com/in/christlc">LinkedIn</a>.
+        For the Hong Kong R User Group I helped organizing, 
+        please follow the <a href="https://www.meetup.com/Hong-Kong-R-User-Group/">meetup group</a> or <a href="https://www.facebook.com/groups/hkrusers/">facebook group</a> for events updates.
       </p>
-      <div class="container">
-        <figure 
-          class="image" 
-          style="width:130px;margin:auto;">
-          <img src="chris.jpg">
-        </figure>
-      </div>
     </section>
   </div>
 </template>
@@ -91,6 +99,7 @@ export default {
 </script>
 
 <style scoped>
+
 .features {
     text-align: center;
     color: #6d6d6d;
@@ -104,7 +113,7 @@ export default {
     font-size: 3em;
 }
 
-.features .column .fa {
+.features .fa {
     color: #006064;
 }
 

@@ -92,7 +92,8 @@ module.exports = {
   css: [
    { src: 'node_modules/font-awesome/css/font-awesome.css', lang: 'css' },
    { src: 'node_modules/highlight.js/styles/hopscotch.css', lang: 'css' },
-   { src: 'assets/style.css', lang: 'css'}
+   { src: 'assets/style.css', lang: 'css'},
+   { src: 'node_modules/animate.css/animate.css', lang: 'css'}
   ],
 
   /*
