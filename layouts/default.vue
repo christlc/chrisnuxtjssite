@@ -5,7 +5,7 @@
         <div class="navbar-brand">
           <nuxt-link
             class="navbar-item" 
-            href="/">
+            to="/">
             <img src="favicon-256.png">
             
             <span class="logo">
