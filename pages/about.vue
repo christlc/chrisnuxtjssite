@@ -28,7 +28,9 @@
         >
 
           <div class="column">
-            <i class="fa fa-line-chart" />
+            <span class="icon" >
+              <fa :icon="['fas','chart-line']" />
+            </span>
             <div>
               R and Python programmer <br>
               Tableau and PowerBI Visualization <br>
@@ -43,7 +45,9 @@
         >      
 
           <div class="column">
-            <i class="fa fa-graduation-cap"/>
+            <span class="icon" >
+              <fa :icon="['fas','graduation-cap']" />
+            </span>
             <div>
               DPhil in Statistics from Oxford <br>
               Self-taught Full-stack Developer
@@ -56,7 +60,9 @@
           leave-active-class="animated tada"
         >    
           <div class="column">
-            <i class="fa fa-users" />
+            <span class="icon" >
+              <fa :icon="['fas','users']" />
+            </span>
             <div>
               Organizer of Hong Kong R User Group <br>
               Speaker of PyconHK conferences
@@ -97,22 +103,22 @@ export default {
     font-size: 0.9em;
 }
 
-.features .fa {
+.features .icon {
     margin: auto;
     margin-bottom: 10px;
     width: 50%;
     font-size: 3em;
 }
 
-.features .column .fa {
+.features .column .icon {
     color: #006064;
 }
 
-.features .column:nth-of-type(2) .fa {
+.features .column:nth-of-type(2) .icon {
     color: #006064;
 }
 
-.features .column:nth-of-type(3) .fa {
+.features .column:nth-of-type(3) .icon {
     color: #006064;
 }
 

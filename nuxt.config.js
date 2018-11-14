@@ -91,7 +91,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-   { src: 'node_modules/font-awesome/css/font-awesome.css', lang: 'css' },
    { src: 'node_modules/highlight.js/styles/hopscotch.css', lang: 'css' },
    { src: 'assets/style.css', lang: 'css'},
    { src: 'node_modules/animate.css/animate.css', lang: 'css'}
@@ -108,7 +107,21 @@ module.exports = {
   */
   modules: [
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [
+        //import whole set
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        },
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['fab']
+        }
+      ]
+    }]
   ],
   /*
   ** Build configuration

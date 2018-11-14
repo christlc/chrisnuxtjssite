@@ -34,26 +34,33 @@
             <nuxt-link
               class="navbar-item" 
               to="/about">
-              <i 
-                class="fa fa-user " 
-                style="padding-right:10px;color:hsl(348, 100%, 61%);"/>
+              <span 
+                class="icon"             
+                style="padding-right:10px;color:hsl(348, 100%, 61%);">
+                <fa :icon="['fas','user']" />
+              </span>
               About
             </nuxt-link>
             <nuxt-link
               class="navbar-item" 
               to="/posts">
-              <i 
-                class="fa fa-newspaper-o" 
-                style="padding-right:10px;color:hsl(48, 100%, 67%);"/>
+              <span 
+                class="icon"             
+                style="padding-right:10px;color:hsl(48, 100%, 67%);">
+                <fa :icon="['fas','newspaper']" />
+              </span>
               Posts
             </nuxt-link>
 
-            <span class="navbar-item">
+            <span 
+              class="navbar-item">
               <nuxt-link 
                 to="/contact" 
                 class="button is-rounded is-success">
-                <span style="padding-right:10px;">
-                  <i class="fa fa-envelope"/> 
+                <span 
+                  class="icon" 
+                  style="margin-right:0;margin-left:0;">
+                  <fa :icon="['fas','envelope']" />
                 </span>
                 Contact
             </nuxt-link></span>
@@ -70,15 +77,15 @@
       <div class="content has-text-centered">
         <p class="footer-link">
           <a href="https://hk.linkedin.com/in/christlc">
-            <i class="fa fa-linkedin" />
+            <fa :icon="['fab','linkedin']" />
           </a>
           
           <a href="https://github.com/christlc">
-            <i class="fa fa-github" />
+            <fa :icon="['fab','github']" />
           </a>
 
           <a href="https://medium.com/@christlc">
-            <i class="fa fa-medium" />
+            <fa :icon="['fab','medium']" />
           </a>
           <br >
           Created by <strong>Chris Choy</strong>.

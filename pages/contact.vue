@@ -25,7 +25,10 @@
         >
 
           <div class="column">
-            <i class="fa fa-envelope" />
+            <span class="icon" >
+              <fa :icon="['fas','envelope']" />
+            </span>
+
             <div>
               Email chris "at" chsquare.com
             </div>
@@ -39,7 +42,9 @@
         >      
           <div class="column">
             <a href="https://hk.linkedin.com/in/christlc">
-              <i class="fa fa-linkedin"/>
+              <span class="icon" >
+                <fa :icon="['fab','linkedin']" />
+              </span>
               <div>
                 LinkedIn @christlc
               </div>
@@ -53,7 +58,9 @@
         >    
           <div class="column">
             <a href="https://github.com/christlc">
-              <i class="fa fa-github" />
+              <span class="icon" >
+                <fa :icon="['fab','github']" />
+              </span>
               <div>
               
                 Github @christlc
@@ -68,7 +75,9 @@
         >    
           <div class="column">
             <a href="https://medium.com/@christlc">
-              <i class="fa fa-medium" />
+              <span class="icon" >
+                <fa :icon="['fab','medium']" />
+              </span>
               <div>
               
                 Medium @christlc
@@ -106,22 +115,22 @@ export default {
     font-size: 0.9em;
 }
 
-.features .fa {
+.features .icon {
     margin: auto;
     margin-bottom: 10px;
     width: 50%;
     font-size: 3em;
 }
 
-.features .fa {
+.features .icon {
     color: #006064;
 }
 
-.features .column:nth-of-type(2) .fa {
+.features .column:nth-of-type(2) .icon {
     color: #006064;
 }
 
-.features .column:nth-of-type(3) .fa {
+.features .column:nth-of-type(3) .icon {
     color: #006064;
 }
 
